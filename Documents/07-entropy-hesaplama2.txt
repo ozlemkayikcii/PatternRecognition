@@ -1,0 +1,86 @@
+Nt = 10 vectors
+w1 = 4, w2 = 4, w3=2, Total=10
+
+XtY ===> w1=3, w2=1, Total=4
+XtN ===> w1=1, w2=3, w3=2, Total=6
+
+I(t) = -(4/10)*log2(4/10)-(4/10)*log2(4/10)-(2/10)*log2(2/10)
+I(tY) = -(3/4)*log2(3/4)-(1/4)*log2(1/4)
+I(tN) = -(1/6)*log2(1/6)-(3/6)*log2(3/6)-(2/6)*log2(2/6)
+
+Example
+#########################################################################################
+4 class and includes 10 sample vectors
+Cinema=6, Tennis=2, Stayin=1, Shopping=1
+
+I(t) = -(6/10)*log2(6/10)-(2/10)*log2(2/10)-(1/10)*log2(1/10)-(1/10)*log2(1/10)=1.571
+
+#########################################################################################
+#Can Weather be  a root? We have to calculate the entropy of Sunny, Windy and Rainy
+
+
+Weekend     Weather     Parents     Money       Decision
+w1          Sunny       Yes         Rich        Cinema
+w2          Sunny       No          Rich        Tennis
+w10         Sunny       No          Rich        Tennis
+
+2 class and includes 3 sample vectors
+Cinema=1, Tennis=2, Total=3
+
+Entropy(Sun): -(1/3)*log2(1/3)-(2/3)*log2(2/3) = 0.918
+Toplamda 3 kez sun var
+Cinema | sun = 1/3
+Tennis | sun = 2/3
+
+#########################################################################################
+#Can Weather be  a root?
+
+Weekend     Weather     Parents     Money       Decision
+w3          Windy       Yes         Rich        Cinema
+w7          Windy       No          Poor        Cinema
+w8          Windy       No          Rich        Shopping
+w9          Windy       Yes         Rich        Cinema
+
+2 class and includes 4 sample vectors
+Cinema=3, Shopping=1, Total=4
+
+Entropy(Windy): -(3/4)*log2(3/4)-(1/4)*log2(1/4) = 0.81125
+Toplamda 4 kez Windy var
+Cinema | Windy = 3/4
+Shopping | Windy = 1/4
+
+#########################################################################################
+#Can Parents be  a root? We have to calculate the entropy of Yes and No
+
+Weekend     Weather     Parents     Money       Decision
+w1          Sunny       Yes         Rich        Cinema
+w3          Windy       Yes         Rich        Cinema
+w4          Rainy       Yes         Poor        Cinema
+w6          Rainy       Yes         Poor        Cinema
+w9          Windy       Yes         Rich        Cinema
+
+1 class and includes 5 sample vectors
+Cinema=5
+
+Entropy(Yes): -(5/5)*log2(5/5) = 0
+Toplamda 5 kez Yes var
+Cinema | Yes = 5/5
+
+
+#########################################################################################
+#Can Parents be  a root? We have to calculate the entropy of Yes and No
+
+Weekend     Weather     Parents    Money      Decision
+w2          Sunny       No         Rich        Tennis
+w5          Rainy       No         Rich        Stayin
+w7          Windy       No         Poor        Cinema
+w8          Windy       No         Rich        Shopping
+w10         Sunny       No         Rich        Tennis
+
+4 class and includes 5 sample vectors
+Tennis=2, Stayin=1, Cinema=1, Shopping=1, Total=5
+
+Entropy(No): -(2/5)*log2(2/5) -(1/5)*log2(1/5)-(1/5)*log2(1/5)-(1/5)*log2(1/5)=1.92
+Toplamda 5 kez No var
+Tennis=2, Stayin=1, Cinema=1, Shopping=1
+
